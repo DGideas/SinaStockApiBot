@@ -15,5 +15,5 @@ f=codecs.open('runtime.csv','a','utf8');
 i=1
 while i<=2000:
     info=urllib.request.urlopen('http://hq.sinajs.cn/list=sz'+str(i)).read();
-    f.write(info+''\n);
+    f.write(info+'\n');
     i=i+1;
