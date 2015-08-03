@@ -15,7 +15,7 @@ except OSError:
 f=codecs.open('runtime.csv','a','utf8');
 i=1;
 stri='';
-while i<=2000:
+while i<=20000:
 	p=6-int(len(str(i)));
 	stri=str(i);
 	while p>0:
@@ -23,5 +23,9 @@ while i<=2000:
 		p=p-1;
 	print(stri);
 	info=urllib.request.urlopen('http://203.90.242.126/list=sz'+str(stri)); #equal to hq.sinajs.cn
-	f.write(str(info.read())+'\n');
+	strinfo=str(info.read());
+	if len(strinfo.split(','))==1:
+		pass;
+	else:
+		f.write(str(info.read())+'\n');
 	i=i+1;
