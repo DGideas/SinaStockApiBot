@@ -13,9 +13,15 @@ except OSError:
 	pass;
 
 f=codecs.open('runtime.csv','a','utf8');
-i=1
+i=1;
+stri='';
 while i<=2000:
-    info=urllib.request.urlopen('http://hq.sinajs.cn/list=sz'+str(i)).read();
-    f.write(info+'\n');
+	p=6-int(len(str(i)));
+	stri=str(i);
+	while p>0:
+		stri='0'+str(stri);
+		p=p-1;
+    info=urllib.request.urlopen('http://hq.sinajs.cn/list=sz'+str(stri)).read();
+    f.write(str(info)+'\n');
     print(i);
     i=i+1;
