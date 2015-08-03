@@ -21,7 +21,7 @@ while i<=2000:
 	while p>0:
 		stri='0'+str(stri);
 		p=p-1;
-    info=urllib.request.urlopen('http://hq.sinajs.cn/list=sz'+str(stri));
-    f.write(str(info.read())+'\n');
-    print(i);
-    i=i+1;
+	print(stri);
+	info=urllib.request.urlopen('http://hq.sinajs.cn/list=sz'+str(stri));
+	f.write(str(info.read())+'\n');
+	i=i+1;
