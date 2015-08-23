@@ -24,8 +24,8 @@ while i<=5000:
 	#深证成指
 	try:
 		urllib.request.urlopen('http://203.90.242.126/list=sz'+str(stri)); #equal to hq.sinajs.cn
-	except http.client.BadStatusLine:
-		pass;
+	except:
+		print('Fetch an error, pass');
 	else:
 		info=urllib.request.urlopen('http://203.90.242.126/list=sz'+str(stri)); #equal to hq.sinajs.cn
 		print(stri);
