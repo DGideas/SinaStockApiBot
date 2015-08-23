@@ -18,8 +18,8 @@ for line in f.readlines():
 	stock=line[0:-1]
 	try:
 		urllib.request.urlopen('http://203.90.242.126/list='+stock); #equal to hq.sinajs.cn
-	except http.client.BadStatusLine:
-		pass;
+	except:
+		print('Fetch an error, pass');
 	else:
 		info=urllib.request.urlopen('http://203.90.242.126/list='+stock); #equal to hq.sinajs.cn
 		print(stock);
